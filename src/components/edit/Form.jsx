@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useEditBookMutation } from "../../features/api/apiSlice";
 
 const Form = ({ book }) => {
@@ -22,6 +23,10 @@ const Form = ({ book }) => {
   const [price, setprice] = useState(+initialPrice);
   const [rating, setRating] = useState(+initialRating);
   const [featured, setFeatured] = useState(initialFeatured);
+  const navigate = useNavigate();
+  if (isSuccess) {
+    navigate("/");
+  }
   console.log(featured);
   const handleEdit = (e) => {
     e.preventDefault();
