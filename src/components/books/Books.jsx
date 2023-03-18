@@ -21,7 +21,7 @@ const Books = ({ filter, search }) => {
     content = <div>Loading...</div>;
   }
   if (!isLoading && isError) {
-    content = <div>{error}</div>;
+    content = <div>There was an error</div>;
   }
   if (!isLoading && !isError && books.length === 0) {
     content = <div>No Books Found</div>;
